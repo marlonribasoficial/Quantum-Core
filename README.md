@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/status-concluído-F97316?style=for-the-badge)
 ![Engine](https://img.shields.io/badge/Engine-RealityKit-F97316?style=for-the-badge&logo=apple)
-![Platform](https://img.shields.io/badge/Platform-macOS-F97316?style=for-the-badge&logo=apple)
+![Platform](https://img.shields.io/badge/Platform-iPadOS-F97316?style=for-the-badge&logo=apple)
 ![Genre](https://img.shields.io/badge/Genre-Experiência%20Interativa-F97316?style=for-the-badge)
 
 ---
