@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantum Core</title>
+  <meta name="description" content="Quantum Core — an interactive experience about subatomic particle physics. Restore Max by exploring the atom from the inside." />
+  <link rel="icon" href="assets/icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="hero">
+    <nav class="topbar">
+      <div class="topbar-tab active">Home</div>
+      <div class="topbar-tab">System</div>
+      <div class="topbar-spacer"></div>
+      <div class="battery">
+        <div class="battery-fill"></div>
+      </div>
+      <span class="energy-label">100%</span>
+    </nav>
+
+    <div class="hero-content">
+      <img class="icon" src="assets/icon.png" alt="Quantum Core app icon" />
+      <h1 class="title">
+        <span class="title-line">Quantum</span>
+        <span class="title-line">Core</span>
+      </h1>
+      <p class="tagline">Wake Max back up — one fundamental particle at a time.</p>
+      <a class="cta" href="#screens">See how it works</a>
+    </div>
+
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+    <div class="orb orb-d"></div>
+  </header>
+
+  <main>
+    <section class="pitch">
+      <p>
+        <strong>Quantum Core</strong> is an interactive experience where you explore
+        an atom from the inside to bring an offline intelligence — Max — back online.
+        Every particle you discover restores a piece of the system: the electron,
+        the photon, the quarks, the gluon, the W and Z bosons. Along the way, you
+        learn the real structure of matter, one honest, well-explained beat at a time.
+      </p>
+    </section>
+
+    <section id="screens" class="screens">
+      <h2 class="section-title">Inside the experience</h2>
+
+      <div class="screen-grid">
+        <figure class="screen-card">
+          <img src="assets/screenshot-home.png" alt="Quantum Core title screen" />
+          <figcaption>Home — the device is offline, waiting for you to bring it back.</figcaption>
+        </figure>
+
+        <figure class="screen-card">
+          <img src="assets/screenshot-particle.png" alt="Electron particle detail card" />
+          <figcaption>Every particle you find opens a real explanation — name, charge, system.</figcaption>
+        </figure>
+
+        <figure class="screen-card">
+          <img src="assets/screenshot-nucleus.png" alt="Nucleus 3D scene" />
+          <figcaption>Zoom past the electron shell into the nucleus — protons, neutrons, and beyond.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="facts">
+      <div class="fact">
+        <span class="fact-label">Platforms</span>
+        <span class="fact-value">iOS · iPadOS · visionOS</span>
+      </div>
+      <div class="fact">
+        <span class="fact-label">Particles</span>
+        <span class="fact-value">Electron · Photon · Quarks · Gluon · W Boson · Z Boson</span>
+      </div>
+      <div class="fact">
+        <span class="fact-label">Built for</span>
+        <span class="fact-value">Swift Student Challenge</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Quantum Core — built by Marlon Ribas.</p>
+  </footer>
+
+</body>
+</html>
