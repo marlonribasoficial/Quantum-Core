@@ -1,0 +1,344 @@
+@font-face {
+  font-family: "VT323";
+  src: url("assets/fonts/VT323-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PressStart2P";
+  src: url("assets/fonts/PressStart2P-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --primary: #FF3E00;
+  --secondary: #00F0FF;
+  --tertiary: #FFFF00;
+  --black: #000000;
+  --white: #FFFFFF;
+  --gray: #8A8A8A;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: "VT323", monospace;
+  font-size: 22px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Subtle scanline texture over the whole page */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.025) 0px,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  padding: 20px 28px;
+  border-bottom: 4px solid var(--white);
+  background: var(--primary);
+  position: relative;
+  z-index: 2;
+}
+
+.topbar-tab {
+  font-family: "VT323", monospace;
+  font-size: 22px;
+  padding: 6px 20px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.topbar-tab.active {
+  color: var(--black);
+  font-weight: bold;
+  border-bottom: 3px solid var(--black);
+}
+
+.topbar-spacer {
+  flex: 1;
+}
+
+.battery {
+  width: 44px;
+  height: 22px;
+  border: 3px solid var(--black);
+  border-radius: 3px;
+  margin-right: 10px;
+  padding: 2px;
+}
+
+.battery-fill {
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+  border-radius: 1px;
+}
+
+.energy-label {
+  font-size: 22px;
+  color: var(--black);
+  font-weight: bold;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+  gap: 20px;
+}
+
+.icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 3px var(--black), 0 12px 0 rgba(0, 0, 0, 0.4);
+}
+
+.title {
+  font-family: "PressStart2P", monospace;
+  line-height: 1.15;
+}
+
+.title-line {
+  display: block;
+  font-size: clamp(32px, 8vw, 64px);
+  color: var(--tertiary);
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.6);
+}
+
+.tagline {
+  font-size: clamp(18px, 3vw, 26px);
+  color: var(--secondary);
+  max-width: 520px;
+}
+
+.cta {
+  margin-top: 12px;
+  display: inline-block;
+  font-family: "VT323", monospace;
+  font-size: 26px;
+  color: var(--black);
+  background: var(--primary);
+  border: 3px solid var(--white);
+  border-radius: 40px;
+  padding: 12px 40px;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+.cta:active {
+  transform: translateY(1px);
+}
+
+/* Floating particle orbs, decorative */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  filter: blur(1px);
+  opacity: 0.9;
+}
+
+.orb-a {
+  width: 46px;
+  height: 46px;
+  top: 18%;
+  left: 12%;
+  background: radial-gradient(circle at 35% 30%, #ffe680, var(--tertiary) 75%);
+  animation: float 7s ease-in-out infinite;
+}
+
+.orb-b {
+  width: 30px;
+  height: 30px;
+  top: 30%;
+  right: 15%;
+  background: radial-gradient(circle at 35% 30%, #e6a8ff, #a020c0 75%);
+  animation: float 9s ease-in-out infinite reverse;
+}
+
+.orb-c {
+  width: 22px;
+  height: 22px;
+  bottom: 22%;
+  left: 20%;
+  background: radial-gradient(circle at 35% 30%, #7dff8f, #009c1a 75%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.orb-d {
+  width: 26px;
+  height: 26px;
+  bottom: 30%;
+  right: 22%;
+  background: radial-gradient(circle at 35% 30%, #6ea8ff, #1030c0 75%);
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+/* ---------- Main content ---------- */
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+.pitch {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 28px;
+  text-align: center;
+  font-size: 26px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pitch strong {
+  color: var(--tertiary);
+}
+
+.section-title {
+  font-family: "PressStart2P", monospace;
+  font-size: clamp(18px, 3vw, 26px);
+  color: var(--secondary);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.screens {
+  padding: 20px 28px 80px;
+}
+
+.screen-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.screen-card {
+  background: #111;
+  border: 3px solid var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.screen-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 3px solid var(--white);
+}
+
+.screen-card figcaption {
+  padding: 18px 20px 22px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.facts {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 28px 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.fact {
+  border: 3px solid var(--secondary);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.fact-label {
+  display: block;
+  font-family: "PressStart2P", monospace;
+  font-size: 12px;
+  color: var(--secondary);
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.fact-value {
+  display: block;
+  font-size: 22px;
+  color: var(--white);
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px 24px 60px;
+  color: var(--gray);
+  font-size: 18px;
+  border-top: 3px solid #222;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  body {
+    font-size: 20px;
+  }
+
+  .topbar {
+    padding: 16px 18px;
+  }
+
+  .icon {
+    width: 76px;
+    height: 76px;
+  }
+}
