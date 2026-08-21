@@ -65,7 +65,7 @@ Representação simplificada e intuitiva de conceitos científicos, com aprendiz
 |---|---|
 | **Engine 3D** | RealityKit |
 | **Linguagem** | Swift |
-| **Modelagem 3D** | Blender |
+| **Modelagem 3D** | Blender & Reality Composer Pro |
 
 ---
 
